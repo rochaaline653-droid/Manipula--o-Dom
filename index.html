@@ -1,0 +1,108 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title> Manipulação DOM</title>
+</head>
+<body>
+
+    <div id="container">
+        <h1 id="titulo-boas-vindas">Texto Inicial...</h1>
+    </div>
+
+    <script src="exercicio1.js"></script>
+</body>
+
+
+
+    
+<h2>Exercício 2 - Adicionando itens</h2>
+
+<ul id="lista-tarefas">
+    <li>Estudar sintaxe básica do JS</li>
+</ul>
+
+<input
+    type="text"
+    id="campo-tarefa"
+    placeholder="Digite uma tarefa"
+>
+
+<button onclick="adicionarItemDoCampo()">
+    Adicionar tarefa
+</button>
+
+<script src="exercicio2.js"></script>
+
+    
+
+    <h2>Exercício 3 - Alterando estilos</h2>
+
+    <style>
+        .destaque {
+            background-color: #fef08a;
+            border: 2px solid #eab308;
+            padding: 12px;
+        }
+
+        .oculto {
+            display: none;
+        }
+    </style>
+
+    <div id="painel" class="oculto">
+    <p>Mensagem importante para o usuário!</p>
+</div>
+
+<button onclick="mostrarPainel()">Exibir painel</button>
+
+<script src="exercicio3.js"></script>
+    
+
+    
+<h2>Exercício 4 - Removendo notificações</h2>
+
+<ul id="notificacoes">
+    <li id="notif-1">Notificação 1: Atualização de sistema</li>
+    <li id="notif-2">Notificação 2: Novo e-mail recebido</li>
+    <li id="notif-3">Notificação 3: Lembrete de aula</li>
+</ul>
+
+<button onclick="removerPrimeiraNotificacao()">
+    Remover primeira notificação
+</button>
+
+<script src="exercicio4.js"></script>
+
+    
+
+    <h2>Exercício 5 - Evento de clique</h2>
+
+    <input type="text" id="campo-nome" placeholder="Digite seu nome">
+    <button id="btn-exibir">Exibir mensagem</button>
+    <p id="resposta"></p>
+    <script src="exercicio5.js"></script>
+    
+
+    <script>
+        function executarExercicio(numero) {
+            const scriptAntigo = document.getElementById("script-exercicio");
+
+            if (scriptAntigo) {
+                scriptAntigo.remove();
+            }
+
+            const script = document.createElement("script");
+            script.id = "script-exercicio";
+            script.src = "exercicio" + numero + ".js";
+            script.onerror = function() {
+                alert("Não foi possível carregar o arquivo do exercício " + numero);
+            };
+
+            document.body.appendChild(script);
+        }
+    </script>
+
+</body>
+</html>
